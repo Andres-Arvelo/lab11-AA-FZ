@@ -1,3 +1,8 @@
+#https://github.com/Andres-Arvelo/lab11-AA-FZ.git
+#Partner 1: Andres Arvelo
+#Partner 2: Fareed Zaki
+
+
 #In this project, you will build a scientific calculator on the command line. The program will display a menu of options which includes several arithmetic operations as well as options to display statistics and exit the program. The project is designed to give you an opportunity to practice looping, type conversion, and data persistence.
 import math
 
