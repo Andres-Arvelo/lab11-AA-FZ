@@ -1,12 +1,9 @@
 #Lab 3 Scientific Calculator
 import math
 def square_root(a):
-    try:
         if a < 0:
             raise ValueError("square root input must be non-negative")
         return math.sqrt(a)
-    except ValueError as e:
-        print(f"Error: {e}")
 
 def hypotenuse(a, b):
     try:
@@ -23,7 +20,7 @@ def mul(a, b):
 def div(a, b):
     if a == 0:
         raise ZeroDivisionError("division by zero is not allowed")
-    return b / a
+    return a / b
 def log(a, b):
     if b <= 0:
         raise ValueError("logarithm input must be positive")
