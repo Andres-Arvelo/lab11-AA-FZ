@@ -1,3 +1,8 @@
+#https://github.com/Andres-Arvelo/lab11-AA-FZ.git
+#Partner 1: Andres Arvelo
+#Partner 2: Fareed Zaki
+
+
 #Lab 3 Scientific Calculator
 import math
 def square_root(a):
