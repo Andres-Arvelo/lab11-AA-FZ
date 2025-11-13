@@ -20,12 +20,13 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(mul(0, 100), 0)
 
     def test_divide_by_zero(self):
-    def test_divide(self):
-        self.assertEqual(div(10, 2), 5)
-        self.assertEqual(div(7, 2), 3.5)
         with self.assertRaises(ZeroDivisionError):
             calculator.div(0,10)
             div(5, 0)
+
+    def test_divide(self):
+        self.assertEqual(div(10, 2), 5)
+        self.assertEqual(div(7, 2), 3.5)
 
     def test_logarithm(self):
         self.assertAlmostEqual(calculator.log(2, 8), 3.0)
