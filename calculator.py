@@ -30,6 +30,6 @@ def logarithm(a, b):
         raise ValueError("logarithm input must be positive")
     if a <= 0 or a == 1:
         raise ValueError("logarithm base must be positive and not equal to 1")
-    math.log(b, a)
+    return math.log(b, a)
 def exp(a, b):
     return a ** b
