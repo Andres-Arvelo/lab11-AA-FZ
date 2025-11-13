@@ -14,6 +14,7 @@ class TestCalculator(unittest.TestCase):
     def test_sub(self):
         self.assertEqual(calculator.sub(5,2),3)
         self.assertEqual(calculator.sub(5,-2),7)
+
     def test_multiply(self):
         self.assertEqual(mul(2,3), 6)
         self.assertEqual(mul(-4, 5), -20)
@@ -32,10 +33,16 @@ class TestCalculator(unittest.TestCase):
         self.assertAlmostEqual(calculator.log(2, 8), 3.0)
 
     def test_log_invalid_base(self):
+        with self.assertRaises(ValueError):
+            calculator.log(0, 5)  # base = 0
+        with self.assertRaises(ValueError):
+            calculator.log(1, 5)  # base = 1
+
     def test_log_invalid_argument(self):
         with self.assertRaises(ValueError):
-            calculator.log(0, 5)  #  base = 0
-            log(10, -5)
+            calculator.log(10, -5)
+        with self.assertRaises(ValueError):
+            calculator.log(10,0)
 
     def test_hypotenuse(self):
         self.assertEqual(hypotenuse(3, 4), 5)
@@ -44,7 +51,6 @@ class TestCalculator(unittest.TestCase):
 
     def test_sqrt(self):
         with self.assertRaises(ValueError):
-            calculator.log(1, 5)  #  base = 1
             square_root(-9)
         self.assertEqual(square_root(0), 0)
         self.assertEqual(square_root(25), 5)
