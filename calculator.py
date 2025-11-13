@@ -32,14 +32,6 @@ def exp(a, b):
     return a ** b
 
 
-
-
-
-
-
-
-
-
 def print_menu(current_result):
     # Prints the "Current Result" header and the full menu, ending with the selection prompt.
     print(f"\nCurrent Result: {current_result}")
