@@ -181,6 +181,20 @@ while program != 0:
 
 #Lab 3 Scientific Calculator
 import math
+def square_root(a):
+    try:
+        if a < 0:
+            raise ValueError("square root input must be non-negative")
+        return math.sqrt(a)
+    except ValueError as e:
+        print(f"Error: {e}")
+
+def hypotenuse(a, b):
+    try:
+        return math.hypot(a,b)
+    except Exception as e:
+        print(f"Error: {e}")
+
 def add(a, b):
     return a + b
 def sub(a, b):
