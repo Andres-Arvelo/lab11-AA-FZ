@@ -8,12 +8,14 @@ from calculator import *
 
 class TestCalculator(unittest.TestCase):
     def test_add(self):
-        self.assertEqual(calculator.add(1, 2), 3)
-        self.assertEqual(calculator.add(-10, 5), -5)
+        self.assertEqual(add(1, 2), 3)
+        self.assertEqual(add(-10, 5), -5)
+        self.assertEqual(add(4, 12), 16)
 
     def test_sub(self):
-        self.assertEqual(calculator.sub(5,2),3)
-        self.assertEqual(calculator.sub(5,-2),7)
+        self.assertEqual(subtract(5,2),3)
+        self.assertEqual(subtract(5,-2),7)
+        self.assertEqual(subtract(10, 8), 2)
 
     def test_multiply(self):
         self.assertEqual(mul(2,3), 6)
@@ -22,7 +24,7 @@ class TestCalculator(unittest.TestCase):
 
     def test_divide_by_zero(self):
         with self.assertRaises(ZeroDivisionError):
-            calculator.div(0,10)
+            div(0,10)
             div(5, 0)
 
     def test_divide(self):
@@ -30,19 +32,21 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(div(7, 2), 3.5)
 
     def test_logarithm(self):
-        self.assertAlmostEqual(calculator.log(2, 8), 3.0)
+        self.assertAlmostEqual(logarithm(10, 100), 2)
+        self.assertAlmostEqual(logarithm(2, 8), 3)
+        self.assertAlmostEqual(logarithm(3, 9), 2)
 
     def test_log_invalid_base(self):
         with self.assertRaises(ValueError):
-            calculator.log(0, 5)  # base = 0
+            logarithm(0, 5)  # base = 0
         with self.assertRaises(ValueError):
-            calculator.log(1, 5)  # base = 1
+            logarithm(1, 5)  # base = 1
 
     def test_log_invalid_argument(self):
         with self.assertRaises(ValueError):
-            calculator.log(10, -5)
+            logarithm(10, -5)
         with self.assertRaises(ValueError):
-            calculator.log(10,0)
+            logarithm(10,0)
 
     def test_hypotenuse(self):
         self.assertEqual(hypotenuse(3, 4), 5)
